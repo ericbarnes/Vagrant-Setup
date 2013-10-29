@@ -50,6 +50,7 @@ echo "extension=mailparse.so" | sudo tee -a /etc/php5/apache2/php.ini
 
 echo "--- Enabling mod-rewrite ---"
 sudo a2enmod rewrite
+sudo cp /vagrant/vagrant/apache2.conf /etc/apache2/sites-available/000-default.conf
 
 echo "--- Setting document root ---"
 sudo rm -rf /var/www
@@ -61,6 +62,7 @@ sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/apache2/php.ini
 
 echo "--- Restarting Apache ---"
 sudo service apache2 restart
+sudo service postgresql restart
 
 echo "--- Composer is the future. But you knew that, did you master? Nice job. ---"
 curl -sS https://getcomposer.org/installer | php
