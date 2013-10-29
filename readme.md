@@ -2,7 +2,17 @@ My install Bash script for Vagrant.
 
 This will install php5.5, postgres, mysql, setup vhost, composer, and php mailparse. See vagrant/install.sh to make changes to suit your needs.
 
-Thanks goes to the following references:
+## Postgres
+
+DB connection through Postgres Navicat
+
+* HostName: 127.0.0.1
+* Port: 54320
+* Default Database: vagrant
+* Username: root
+* Password: root
+
+## Thanks goes to the following references:
 
 - [https://laracasts.com/lessons/vagrant-and-laravel](https://laracasts.com/lessons/vagrant-and-laravel)
 - [https://gist.github.com/fideloper/7074502](https://gist.github.com/fideloper/7074502)
