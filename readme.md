@@ -30,7 +30,6 @@ SSH DB connection through Sequel Pro
 * Username: root
 * Password: root
 * Port: 3306
-
 * SSH Host: 127.0.0.1
 * SSH User: vagrant
 * SSH Password: ~/.vagrant.d/insecure_private_key
