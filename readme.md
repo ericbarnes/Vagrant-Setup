@@ -22,6 +22,21 @@ DB connection through Postgres Navicat
 * Username: root
 * Password: root
 
+## MySQL
+
+SSH DB connection through Sequel Pro
+
+* Host: 127.0.0.1
+* Username: root
+* Password: root
+* Port: 3306
+
+* SSH Host: 127.0.0.1
+* SSH User: vagrant
+* SSH Password: ~/.vagrant.d/insecure_private_key
+* SSH Port: 2220
+
+
 ## Thanks goes to the following references:
 
 - [https://laracasts.com/lessons/vagrant-and-laravel](https://laracasts.com/lessons/vagrant-and-laravel)
