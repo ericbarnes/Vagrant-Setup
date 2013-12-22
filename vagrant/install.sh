@@ -42,6 +42,16 @@ cat << EOF | sudo tee -a /etc/php5/mods-available/xdebug.ini
 xdebug.scream=1
 xdebug.cli_color=1
 xdebug.show_local_vars=1
+xdebug.default_enable=1
+xdebug.remote_enable=1
+xdebug.remote_autostart=1
+xdebug.remote_handler=dbgp
+xdebug.remote_host=10.0.2.2
+xdebug.remote_port=9000
+xdebug.idekey=phpstorm
+xdebug.profiler_enable=true
+xdebug.profiler_output_dir="/tmp"
+xdebug.remote_connect_back=1
 EOF
 
 echo "--- Installing and configuring mailparse ---"
@@ -51,10 +61,6 @@ echo "extension=mailparse.so" | sudo tee -a /etc/php5/apache2/php.ini
 echo "--- Enabling mod-rewrite ---"
 sudo a2enmod rewrite
 sudo cp /vagrant/vagrant/apache2.conf /etc/apache2/sites-available/000-default.conf
-
-echo "--- Setting document root ---"
-sudo rm -rf /var/www
-sudo ln -fs /vagrant/public /var/www
 
 echo "--- What developer codes without errors turned on? Not you, master. ---"
 sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/apache2/php.ini
@@ -66,9 +72,9 @@ echo "--- Restarting Apache ---"
 sudo service apache2 restart
 sudo service postgresql restart
 
-echo "--- Composer is the future. But you knew that, did you master? Nice job. ---"
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
+#echo "--- Composer is the future. But you knew that, did you master? Nice job. ---"
+#curl -sS https://getcomposer.org/installer | php
+#sudo mv composer.phar /usr/local/bin/composer
 
 # Laravel stuff here, if you want
 cd /vagrant

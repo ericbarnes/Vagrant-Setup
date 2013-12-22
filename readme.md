@@ -1,6 +1,16 @@
 My install Bash script for Vagrant.
 
-This will install php5.5, postgres, mysql, setup vhost, composer, and php mailparse. See vagrant/install.sh to make changes to suit your needs.
+This will install
+
+* php5.5
+* postgres
+* mysql
+* setup vhost
+* composer
+* php mailparse
+* xdebug for phpstorm
+
+See vagrant/install.sh to make changes to suit your needs.
 
 ## Postgres
 
